@@ -1,0 +1,47 @@
+#!/system/bin/sh
+
+cat << CTAG
+{
+    name:D2W D2S S2W,
+    elements:[
+	{ SPane:{
+		title:"Screen Wake Functions",
+		description:" Choose the Screen Wake Up function you desire. s2w= Sweep2Wake  d2tw= doubletap2wake. Default is Disabled.",
+	}},
+	{ SDescription:{
+		description:" "
+	}},
+	{ SOptionList:{
+		title:"Screen Wake Functions",
+		default:`cat /sys/devices/f9924000.i2c/i2c-2/2-0020/input/input2/screen_wake_options`,
+		action:"generic /sys/devices/f9924000.i2c/i2c-2/2-0020/input/input2/screen_wake_options",
+		values:{
+			`PROF='0:"Disabled", 1:"s2w", 2:"s2w only while charging", 3:"d2tw", 4:"d2tw only while charging", 5:"Both s2w and d2tw"'
+			echo $PROF`
+		}
+	}},
+	{ SDescription:{
+		description:" "
+	}},
+	{ SPane:{
+		title:"Screen Sleep Functions",
+		description:" Choose to enable double tap to sleep. 1=DT2S 0=DISABLED",
+	}},
+	{ SDescription:{
+		description:" "
+	}},
+	{ SOptionList:{
+		title:"Screen Sleep Functions. Note: Double tap anywhere on your status bar to lock screen ",
+		default:`cat /sys/devices/f9924000.i2c/i2c-2/2-0020/input/input2/screen_sleep_options`,
+		action:"generic /sys/devices/f9924000.i2c/i2c-2/2-0020/input/input2/screen_sleep_options",
+		values:{
+			`PROF='0:"Disabled", 1:"DoubleTap2Sleep"'
+			echo $PROF`
+		}
+	}},
+	{ SDescription:{
+		description:" "
+	}},
+    ]
+}
+CTAG

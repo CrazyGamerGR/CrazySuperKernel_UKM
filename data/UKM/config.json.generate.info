@@ -1,0 +1,46 @@
+cat << CTAG
+{
+	name:INFO,
+		elements:[
+			{ SPane:{
+				title:"Universal Kernel Manager"
+			}},
+				{ SLiveLabel:{
+					refresh:0,
+					style:italic,
+					action:"live InfoCurrent"
+			}},
+			{ SPane:{
+				title:"CrazySuperKernel"
+			}},
+				{ SLiveLabel:{
+					refresh:0,
+					style:italic,
+					action:"live KernelCurrent"
+			}},
+			{ SPane:{
+				title:"Links"
+			}},
+			{ SButton:{
+					label:"CrazySuperKernel XDA Thread",
+					action:"devtools cskxda"
+			}},
+			{ SButton:{
+					label:"UKM XDA Thread",
+					action:"devtools ukmxda"
+			}},
+			{ SButton:{
+					label:"UKM Github Source",
+					action:"devtools ukmgithub"
+			}},
+			{ SButton:{
+					label:"CrazyGamerGR Github Source",
+					action:"devtools cskgithub"
+			}},
+						{ SButton:{
+					label:"CrazGamerGR Paypal Donations",
+					action:"devtools cskdonate"
+			}},
+		]
+}
+CTAG
